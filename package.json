@@ -1,0 +1,28 @@
+{
+  "name": "duongs_11",
+  "version": "1.0.0",
+  "description": "Website to showcase Duong's 11 Newsletter",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ziggysauce/duongs_11.git"
+  },
+  "author": "Dan Nguyen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ziggysauce/duongs_11/issues"
+  },
+  "homepage": "https://github.com/ziggysauce/duongs_11#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "connect-flash": "^0.1.1",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "method-override": "^2.3.10",
+    "mongoose": "^5.0.3",
+    "nodemon": "^1.14.12"
+  }
+}
