@@ -1,6 +1,11 @@
 html, body {
   padding: 0;
-  margin: 0; }
+  margin: 0;
+}
+
+// ====================================
+// NAVBAR & FOOTER ====================
+// ====================================
 
 .bar {
   background: #141414;
@@ -9,35 +14,49 @@ html, body {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  
   padding: 10px;
   height: 5em;
   position: fixed;
   left: 0;
   bottom: 0;
-  width: 100%; }
+  width: 100%;}
 
 nav {
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
+
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  color: #141414; }
+
+  color: #141414;
+}
 
 .fam-icon {
   box-sizing: border-box;
+  // border: 1px solid pink;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
-  .fam-icon img {
+  align-items: center;
+
+  img {
     width: 100%;
-    height: 5em; }
+    height: 5em;
+  }
+}
+
+// ====================================
+// GENERAL CONTAINERS =================
+// ====================================
 
 .container {
   border: 2px solid green;
   margin: 10em auto;
-  width: 90vw; }
+  width: 90vw;
+}
