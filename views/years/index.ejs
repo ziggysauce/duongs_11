@@ -1,7 +1,15 @@
 <% include ../partials/header %>
 
 <div class="container">
-  TEST
+  <a class="add-new" href="/years/new">Add new year</a>
+  <div class="years-container">
+    <% years.forEach((year) => { %>
+      <div class="year-card">
+        <img src="<%= year.image %>">
+        <a href="/years/<%= year._id %>"><%= year.name %></a>
+      </div>
+    <% }); %>
+  </div>
 </div>
 
 <% include ../partials/footer %>

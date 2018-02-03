@@ -1,0 +1,15 @@
+<% include ../partials/header %>
+
+<div class="container">
+  <h1 style="text-align: center;">Create a new year</h1>
+  <div style="width: 50%; margin: 25px auto;">
+    <form action="/years" method="POST">
+      <input class="form-control" type="text" placeholder="name" name="name">
+      <input class="form-control" type="text" placeholder="img url" name="image">
+      <button class="add-new">Submit!</button>
+    </form>
+    <a href="/years">Go Back</a>
+  </div>
+</div>
+
+<% include ../partials/footer %>

@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3000;
 const indexRoutes = require('./routes/index');
 // const commentRoutes = require('./routes/comment');
 const yearsRoutes = require('./routes/years');
-// const newsletterRoutes = require('./routes/newsletter');
+const newsletterRoutes = require('./routes/newsletter');
 
 const url = process.env.DATABASEURL || 'mongodb://localhost/newsletter';
 mongoose.connect(url);
@@ -38,7 +38,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // ROUTING
 app.use('/', indexRoutes);
 app.use('/years', yearsRoutes);
-// app.use('/years/:year/newsletter', newsletterRoutes);
+app.use('/years/:year/newsletter', newsletterRoutes);
 // app.use('/years/:year/newsletter/:id/comments', commentRoutes);
 
 app.listen(PORT, () => {
