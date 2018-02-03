@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 const newsletterSchema = mongoose.Schema({
-  title: String,
+  name: String,
   image: String,
-  link: String,
+  pdf: String,
 });
 
 module.exports = mongoose.model('Newsletter', newsletterSchema);

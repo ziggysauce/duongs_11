@@ -7,6 +7,7 @@ const yearSchema = new mongoose.Schema({
     {
       name: String,
       image: String,
+      pdf: String,
       comments: [
         {
           type: mongoose.Schema.Types.ObjectId,

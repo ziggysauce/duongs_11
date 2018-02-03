@@ -24,7 +24,7 @@ router.post('/', (req,res) => {
       console.log(err);
     } else {
       // Redirect to years index
-      console.log(createdYear);
+      console.log('year created: ', createdYear);
       res.redirect('/years');
     }
   });
@@ -38,13 +38,13 @@ router.get('/new', (req,res) => {
 // SHOW: show newsletters from that year
 router.get('/:id', (req,res) => {
   // Find year in DB with provided ID
-  Year.findById(req.params.id).exec((err, foundYear) => {
+  Year.findById(req.params.id).populate('submissions').exec((err, foundYear) => {
     if (err || !foundYear) {
-      req.flash('error', 'Year not found');
+      // req.flash('error', 'Year not found');
       res.redirect('back');
     } else {
       // Year found
-      // Render show template with that year
+      // Render newsletter show template with that year
       res.render('newsletters', {year: foundYear});
     }
   });
