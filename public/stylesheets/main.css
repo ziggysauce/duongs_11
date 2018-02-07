@@ -66,11 +66,11 @@ footer {
   align-items: center;
   flex-wrap: wrap; }
 
-.year-card {
+.show-card {
   border: 2px solid pink;
   min-width: 300px;
   width: 25vw;
   margin: 30px 20px;
   text-align: center; }
-  .year-card img {
+  .show-card img {
     width: 100%; }

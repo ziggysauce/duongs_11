@@ -4,7 +4,7 @@
   <a class="add-new" href="/years/new">Add new year</a>
   <div class="years-container">
     <% years.forEach((year) => { %>
-      <div class="year-card">
+      <div class="show-card">
         <img src="<%= year.image %>">
         <a href="/years/<%= year._id %>"><%= year.name %></a>
       </div>

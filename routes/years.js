@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const Year = require('../models/year');
+const Newsletter = require('../models/newsletter');
+
 
 // INDEX: get all years
 router.get('/', (req,res) => {
@@ -38,14 +40,20 @@ router.get('/new', (req,res) => {
 // SHOW: show newsletters from that year
 router.get('/:id', (req,res) => {
   // Find year in DB with provided ID
-  Year.findById(req.params.id).populate('submissions').exec((err, foundYear) => {
+  Year.findById(req.params.id).exec((err, foundYear) => {
     if (err || !foundYear) {
       // req.flash('error', 'Year not found');
       res.redirect('back');
     } else {
-      // Year found
-      // Render newsletter show template with that year
-      res.render('newsletters', {year: foundYear});
+      Newsletter.find({}, (err, allNewsletters) => {
+        if (err) {
+          console.log(err);
+        } else {
+          // Year found
+          // Render newsletter show template with that year
+          res.render('newsletters', {year: foundYear, newsletters: allNewsletters});
+        }
+      });
     }
   });
 });

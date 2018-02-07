@@ -1,9 +1,17 @@
 <% include ../partials/header %>
 
 <div class="container">
-  <a class="add-new" href="/years/<%= year._id %>/newsletters/new">Add new newsletter</a>
   <p>Newsletter index page</p>
+  <a class="add-new" href="/years/<%= year._id %>/newsletters/new">Add new newsletter</a>
   <a href="/years">Go Back</a>
+
+  <% newsletters.forEach((month) => { %>
+    <div class="show-card">
+      <img src="<%= month.image %>">
+      <a href="<%= month.pdf %>"><%= month.name %></a>
+    </div>
+  <% }); %>
+</div>
 </div>
 
 <% include ../partials/footer %>
