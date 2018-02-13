@@ -1,17 +1,18 @@
 <% include ../partials/header %>
 
 <div class="container">
-  <p>Newsletter index page</p>
-  <a class="add-new" href="/years/<%= year._id %>/newsletters/new">Add new newsletter</a>
-  <a href="/years">Go Back</a>
-
+  <div class="row">
+    <a class="gen-button add-new" href="/years/<%= year._id %>/newsletters/new">Add new newsletter</a>
+    <a class="gen-button back-button" href="/years">Go Back</a>
+  </div>
+  
+  <h1>Find Newsletter by Entry</h1>
   <% newsletters.forEach((month) => { %>
     <div class="show-card">
       <img src="<%= month.image %>">
-      <a href="<%= month.pdf %>"><%= month.name %></a>
+      <a class="gen-button link" href="<%= month.pdf %>"><%= month.name %></a>
     </div>
   <% }); %>
-</div>
 </div>
 
 <% include ../partials/footer %>

@@ -1,12 +1,14 @@
 <% include ../partials/header %>
 
 <div class="container">
-  <a class="add-new" href="/years/new">Add new year</a>
+  <a class="add-new gen-button" href="/years/new">Add new year</a>
+
+  <h1>Find Newsletter by Year</h1>
   <div class="years-container">
     <% years.forEach((year) => { %>
       <div class="show-card">
         <img src="<%= year.image %>">
-        <a href="/years/<%= year._id %>"><%= year.name %></a>
+        <a class="link gen-button" href="/years/<%= year._id %>"><%= year.name %></a>
       </div>
     <% }); %>
   </div>

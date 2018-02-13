@@ -1,3 +1,24 @@
+// ====================================
+// VARIABLES ==========================
+// ====================================
+$dark-grey: #141414;
+$medium-grey: #555;
+$light-grey: #F8F8F8;
+$shadow: #9f9f9f;
+$primary: #ffc642;
+$accent: #7286c3;
+$link: #9c82b1;
+$link-medium: #7e6b8e;
+$link-dark: #574962;
+$add: #43b531;
+$add-medium: #3a982b;
+$add-dark: #26611d;
+$delete: #f44747;
+$anchor: #5f849a;
+$anchor-medium: #4a6575;
+$anchor-dark: #2c3b44;
+
+
 html, body {
   padding: 0;
   margin: 0;
@@ -9,8 +30,8 @@ html, body {
 
 .bar {
   box-sizing: border-box;
-  background: #141414;
-  color: #555;
+  background: $dark-grey;
+  color: $medium-grey;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -38,7 +59,7 @@ footer {
   align-items: center;
   flex-wrap: wrap;
 
-  color: #141414;
+  color: $dark-grey;
 }
 
 .fam-icon {
@@ -67,7 +88,7 @@ footer {
 // ====================================
 
 .container {
-  border: 2px solid green;
+  border: 2px solid $add;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -76,20 +97,81 @@ footer {
 
   width: 100%;
   height: 100%;
+
+  h1 {
+    font-family: sans-serif;
+  }
 }
 
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+
 // Button styling
-.add-new {
+.gen-button {
   padding: 10px;
   margin: 10px;
-  border: 2px solid green;
-  background-color: green;
-  color: white;
+  color: $light-grey;
   text-decoration: none;
+  box-shadow: 2px 2px 5px $shadow;
+  transition: 0.3s;
+  border-radius: 3px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-size: 1em;
 
   &:hover {
-    background-color: transparent;
-    color: green;
+    // background-color: transparent;
+    transition: 0.3s;
+  }
+
+  &:active {
+    transform: translateY(5px);
+    box-shadow: 1px 1px 1px $shadow;
+  }
+}
+
+.add-new {
+  border-bottom: 2px solid $add-dark;
+  background: $add;
+  &:hover {
+    background: $add-medium;
+  }
+  &:active {
+    border-bottom: 1px solid $add-dark;
+  }
+}
+
+.back-button {
+  border-bottom: 2px solid $anchor-dark;
+  background-color: $anchor;
+  &:hover {
+    background: $anchor-medium;
+  }
+  &:active {
+    border-bottom: 1px solid $anchor-dark;
+  }
+}
+
+.link {
+  border-bottom: 2px solid $link-dark;
+  background: $link;
+  width: 150px;
+  &:hover {
+    background: $link-medium;
+  }
+  &:active {
+    border-bottom: 1px solid $link-dark;
   }
 }
 
@@ -107,7 +189,9 @@ footer {
 }
 
 .show-card {
-  border: 2px solid pink;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   min-width: 300px;
   width: 25vw;
   margin: 30px 20px;
@@ -115,5 +199,6 @@ footer {
 
   img {
     width: 100%;
+    box-shadow: 4px 4px 10px $shadow;
   }
 }

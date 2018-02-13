@@ -4,12 +4,12 @@
   <h1 style="text-align: center;">Add a newsletter submission to <%= year.name %></h1>
   <div style="width: 50%; margin: 25px auto;">
     <form action="/years/<%= year._id %>/newsletters" method="POST">
-      <input class="form-control" type="text" placeholder="name" name="submission[name]">
-      <input class="form-control" type="text" placeholder="img url" name="submission[image]">
-      <input class="form-control" type="text" placeholder="pdf url" name="submission[pdf]">
-      <button class="add-new">Submit!</button>
+      <input type="text" placeholder="name" name="submission[name]">
+      <input type="text" placeholder="img url" name="submission[image]">
+      <input type="text" placeholder="pdf url" name="submission[pdf]">
+      <button class="gen-button add-new">Submit!</button>
     </form>
-    <a href="/years/<%= year._id %>">Go Back</a>
+    <a class="gen-button back-button" href="/years/<%= year._id %>">Go Back</a>
   </div>
 </div>
 
