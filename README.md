@@ -8,7 +8,7 @@
 
 
 ## About
-This repository is meant to create a website to display all the newsletters for the Duong's 11 family.
+This repository is meant to create a website to display all the newsletters for the Duong's 11 family.  
 [License](https://github.com/ziggysauce/duongs_11/blob/master/LICENSE)  
 
 
