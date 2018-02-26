@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const Year = require('../models/year');
 const Newsletter = require('../models/newsletter');
+const middleware = require('../middleware')
+
 
 
 // INDEX: get all years
@@ -16,7 +18,7 @@ router.get('/', (req,res) => {
 });
 
 // CREATE: add new year to DB
-router.post('/', (req,res) => {
+router.post('/', middleware.isLoggedIn, (req,res) => {
   let name = req.body.name;
   let image = req.body.image;
   let year = {name: name, image: image};
@@ -33,7 +35,7 @@ router.post('/', (req,res) => {
 });
 
 // NEW: show form to create new year
-router.get('/new', (req,res) => {
+router.get('/new', middleware.isLoggedIn, (req,res) => {
   res.render('years/new');
 });
 

@@ -4,7 +4,8 @@
   "description": "Website to showcase Duong's 11 Newsletter",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "connect-flash": "^0.1.1",
+    "dotenv": "^5.0.0",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
@@ -27,6 +29,9 @@
     "node-sass": "^4.7.2",
     "node-sass-middleware": "^0.11.0",
     "nodemon": "^1.14.12",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^4.5.0",
     "path": "^0.12.7"
   }
 }

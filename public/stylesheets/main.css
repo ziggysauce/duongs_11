@@ -2,7 +2,7 @@
 html, body {
   padding: 0;
   margin: 0;
-  font-family: 'Open sans', sans-serif; }
+  font-family: 'Montserrat','Open sans', sans-serif; }
 
 .bar {
   box-sizing: border-box;
@@ -23,16 +23,23 @@ html, body {
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  box-shadow: 0px 1px 5px #888;
   color: #141414; }
+
+.mobile-header {
+  display: none; }
+
+.header-separation {
+  display: flex; }
 
 .fam-icon {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center; }
   .fam-icon img {
     max-width: 5em;
@@ -40,7 +47,22 @@ html, body {
 
 @media screen and (max-width: 725px) {
   .fam-icon {
-    display: none; } }
+    display: none; }
+  .mobile-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #ffc642;
+    box-shadow: 0px 1px 5px #888888; }
+    .mobile-header ul {
+      display: flex;
+      list-style-type: none;
+      padding: 0 0 0 1em; }
+    .mobile-header li {
+      padding: 0 1em 0 0;
+      font-size: 2vw; } }
 
 .container {
   box-sizing: border-box;
@@ -48,7 +70,9 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%; }
+  text-align: center;
+  width: 100%;
+  min-height: calc(100vh - 15em); }
 
 .row {
   display: flex;
@@ -102,6 +126,15 @@ html, body {
   .link:active {
     border-bottom: 1px solid #574962; }
 
+h2 {
+  font-weight: 100;
+  font-size: 2em;
+  margin: 0; }
+
+.user-action {
+  display: flex;
+  margin-bottom: 1em; }
+
 .years-container {
   display: flex;
   flex-direction: row;
@@ -120,3 +153,15 @@ html, body {
   .show-card img {
     width: 100%;
     box-shadow: 4px 4px 10px #9f9f9f; }
+
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap; }
+
+.year-title {
+  font-weight: 400;
+  font-size: 4em;
+  margin: 0; }
+
+.signup {
+  padding: 100px; }

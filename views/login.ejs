@@ -1,0 +1,15 @@
+<% include ./partials/header %>
+  <div class="signup">
+    <h1>Login</h1>
+    <form action="/login" method="post">
+      <input type="text" name="username" placeholder="username">
+      <input type="password" name="password" placeholder="password">
+      <button class="gen-button add-new">Login</button>
+    </form>
+
+    <% if (currentUser){ %>
+      <p>Signed in as <%= currentUser.username %></p>
+      <p><a href="/logout">Logout</a></p>
+    <% } %>
+  </div>
+<% include ./partials/footer %>

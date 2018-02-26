@@ -3,9 +3,10 @@ const router = express.Router({mergeParams: true});
 
 const Year = require('../models/year');
 const Newsletter = require('../models/newsletter');
+const middleware = require('../middleware')
 
 // NEW newsletter
-router.get('/:id/newsletters/new', (req,res) => {
+router.get('/new', middleware.isLoggedIn, (req,res) => {
   Year.findById(req.params.id, (err, year) => {
     if (err) {
       console.log(err)
@@ -17,21 +18,25 @@ router.get('/:id/newsletters/new', (req,res) => {
 });
 
 // CREATE newsletter
-router.post('/:id/newsletters', (req,res) => {
+router.post('/', middleware.isLoggedIn, (req,res) => {
   Year.findById(req.params.id, (err, year) => {
     if (err) {
       console.log('Error: ', err);
       res.redirect('/years');
     } else {
-      Newsletter.create(req.body.submission, (err, submission) => {
+      Newsletter.create(req.body.submission, (err, newsletter) => {
         if (err) {
           // req.flash('error', 'Something went wrong');
           console.log('An error happened: ', err);
         } else {
-          submission.save();
-          year.submissions.push(submission._id);
+          newsletter.save();
+          console.log('this is the newsletter info: ', newsletter);
+          console.log('this is the year selected: ', year);
+          year.submissions.push(newsletter);
           year.save();
-          console.log(submission);
+          console.log('newsletter created: ', newsletter);
+          console.log('this is the year data now: ', year);
+
           // req.flash('success', 'Successfully added a new newsletter');
           res.redirect('/years/' + year._id);
         }

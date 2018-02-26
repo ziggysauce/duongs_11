@@ -1,9 +1,15 @@
 <% include ../partials/header %>
 
 <div class="container">
-  <a class="add-new gen-button" href="/years/new">Add new year</a>
 
-  <h1>Find Newsletter by Year</h1>
+  <div class="user-action">
+    <% if (currentUser && currentUser.username === 'dtn'){ %>
+      <a class="add-new gen-button" href="/years/new">Add new year</a>
+    <% } %>
+  </div>
+
+
+  <h2>Find Newsletter by Year</h2>
   <div class="years-container">
     <% years.forEach((year) => { %>
       <div class="show-card">
