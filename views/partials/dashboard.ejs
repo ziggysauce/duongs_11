@@ -1,0 +1,8 @@
+<div class="dashboard">
+  <a class="gen-button back-button" href="/years">Go Back</a>
+  <ul>
+    <% years.forEach((year) => { %>
+      <li><a class="year-link" href="/years/<%= year._id %>"><%= year.name %></a></li>
+    <% }); %>
+  </ul>
+</div>

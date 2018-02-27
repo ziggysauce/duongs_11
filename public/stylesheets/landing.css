@@ -6,7 +6,7 @@ body {
   z-index: 1;
   position: relative;
   text-align: center;
-  padding-top: 30vh;
+  padding-top: 60vh;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -59,22 +59,22 @@ body {
 }
 
 .slideshow li:nth-child(1) { 
-  background-image: url(https://s19.postimg.org/nfhjodx3n/10399084_645380644975_506_n.jpg) 
+  background-image: url(https://s19.postimg.org/6c0rdy6cz/DSC_1535.jpg) 
 }
 .slideshow li:nth-child(2) { 
-  background-image: url(https://s19.postimg.org/3kvi28n0z/165602_10150135565867853_6566053_n.jpg);
+  background-image: url(https://s19.postimg.org/4wz6p07s3/DSC_0325.jpg);
   animation-delay: 10s; 
 }
 .slideshow li:nth-child(3) { 
-  background-image: url(https://s19.postimg.org/rbuvkkkpv/10399084_645380550165_5632_n.jpg);
+  background-image: url(https://s19.postimg.org/4k7siwa3n/family_154.jpg);
   animation-delay: 20s; 
 }
 .slideshow li:nth-child(4) { 
-  background-image: url(https://s19.postimg.org/sqwg93bgj/1930527_675544341685_5806_n.jpg);
+  background-image: url(https://s19.postimg.org/fwke0rb3n/IMG_1397.jpg);
   animation-delay: 30s; 
 }
 .slideshow li:nth-child(5) { 
-  background-image: url(https://s19.postimg.org/yf2qzxq2r/17941_992440763715_1357324_n.jpg);
+  background-image: url(https://s19.postimg.org/8tcila34z/IMG_7500.jpg);
   animation-delay: 40s; 
 }
 

@@ -45,4 +45,22 @@ router.post('/', middleware.isLoggedIn, (req,res) => {
   });
 });
 
+// EDIT NEWSLETTER ROUTE
+router.get('/:id/edit', middleware.isLoggedIn, (req,res) => {
+  let year_id = ('this is years id: ', req.baseUrl.split('years/').pop().split('/').shift());
+  Year.findById(year_id, (err, year) => {
+    if (err) {
+      console.log('Error: ', err);
+      res.redirect('/years');
+    } else {
+      Newsletter.findById(req.params.id, (err, foundNewsletter) => {
+        console.log('current year: ', year);
+        console.log('found newsletter: ', foundNewsletter);
+        res.render('newsletters/edit', {year: year, submissions: foundNewsletter});
+      });
+    }
+  });
+});
+
+
 module.exports = router;

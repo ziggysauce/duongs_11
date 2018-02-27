@@ -1,0 +1,16 @@
+<% include ../partials/authheader %>
+
+<div class="container">
+  <h1 style="text-align: center;">Edit <%= submissions.name %></h1>
+  <div style="width: 50%; margin: 25px auto;">
+    <form action="/years/<%= year._id %>?_method=PUT" method="POST">
+      <input type="text" value="<%= submissions.name %>" name="submissions[name]">
+      <input type="text" value="<%= submissions.image %>" name="submissions[image]">
+      <input type="text" value="<%= submissions.pdf %>" name="submissions[pdf]">
+      <input type="text" value="<%= submissions.id %>" name="submissions[_id]">
+      <button class="gen-button add-new">Submit!</button>
+    </form>
+  </div>
+</div>
+
+<% include ../partials/footer %>

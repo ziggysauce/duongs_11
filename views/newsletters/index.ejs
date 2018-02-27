@@ -1,23 +1,30 @@
 <% include ../partials/header %>
 
-<div class="container">
-  <div class="user-action">
-    <% if (currentUser && currentUser.username === 'dtn'){ %>
-      <a class="gen-button add-new" href="/years/<%= year._id %>/newsletters/new">Add new newsletter</a>
-    <% } %>
-    <a class="gen-button back-button" href="/years">Go Back</a>
-  </div>
-  
-  <h1 class="year-title"><%= year.name %></h1>
-  <h2>Find Newsletter by Entry</h2>
-  <div class="card-wrapper">
-    <% year.submissions.forEach((month) => { %>
-      <div class="show-card">
-        <img src="<%= month.image %>">
-        <a class="gen-button link" href="<%= month.pdf %>"><%= month.name %></a>
-      </div>
-    <% }); %>
+<div class="content-wrapper">
+  <% include ../partials/dashboard %>
+  <div class="container">
+    <div class="user-action">
+      <% if (currentUser && currentUser.username === 'dtn'){ %>
+        <a class="gen-button add-new" href="/years/<%= year._id %>/newsletters/new">Add new newsletter</a>
+        <form class="delete" action="/years/<%= year._id %>?_method=DELETE" method="POST">
+          <button class="gen-button delete-button">Delete this year</button>
+        </form>
+      <% } %>
+    </div>
+    
+    <h1 class="year-title"><%= year.name %></h1>
+    <h2>Find Newsletter by Entry</h2>
+    <div class="card-wrapper">
+      <% year.submissions.forEach((month) => { %>
+        <div class="show-card">
+          <img src="<%= month.image %>">
+          <a class="gen-button link" href="<%= month.pdf %>"><%= month.name %></a>
+          <% if (currentUser && currentUser.username === 'dtn'){ %>
+            <a class="gen-button edit-button" href="/years/<%= year._id %>/newsletters/<%= month._id %>/edit">Edit</a>
+          <% } %>
+        </div>
+      <% }); %>
+    </div>
   </div>
 </div>
-
 <% include ../partials/footer %>
