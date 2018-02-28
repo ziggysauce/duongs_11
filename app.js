@@ -23,8 +23,8 @@ const Year = require('./models/year');
 const Newsletter = require('./models/newsletter');
 const User = require('./models/user');
 
-// const url = process.env.DATABASEURL || 'mongodb://localhost/newsletter';
-const url = 'mongodb://localhost/newsletter';
+const url = process.env.DATABASEURL || 'mongodb://localhost/newsletter';
+// const url = 'mongodb://localhost/newsletter';
 mongoose.connect(url);
 
 app.use(bodyParser.urlencoded({extended: true}));
