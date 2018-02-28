@@ -12,3 +12,13 @@
     <nav class="bar">
       <h1><a href="/years">Duong's 11 Newsletter</a></h1>
     </nav>
+
+    <div class="flash-container">
+      <% if(error && error.length > 0) { %>
+        <div class="alert alert-danger"><p><%=error %></p></div>
+      <% } %>
+      
+      <% if(success && success.length > 0) { %>
+        <div class="alert alert-success"><p><%= success %></p></div>
+      <% } %>
+    </div>

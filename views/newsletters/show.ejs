@@ -1,0 +1,21 @@
+<% include ../partials/authheader %>
+
+
+  <div class="user-action">
+    <% if (currentUser && currentUser.username === 'dtn'){ %>
+      <a class="gen-button back-button" href="/years/<%= year._id %>">Go Back</a>
+      <a class="gen-button edit-button" href="/years/<%= year._id %>/newsletters/<%= newsletter._id %>/edit">Edit</a>
+      <form class="delete" action="/years/<%= year._id %>/newsletters/<%= newsletter._id %>?_method=DELETE" method="POST">
+        <button class="gen-button delete-button">Delete this newsletter</button>
+      </form>
+    <% } %>
+  </div>
+
+  <div class="card-wrapper">
+    <div class="show-card">
+      <img src="<%= newsletter.image %>">
+      <a class="gen-button link" href="<%= newsletter.pdf %>"><%= newsletter.name %></a>
+    </div>
+  </div>
+
+<% include ../partials/footer %>

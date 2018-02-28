@@ -20,7 +20,7 @@
           <img src="<%= month.image %>">
           <a class="gen-button link" href="<%= month.pdf %>"><%= month.name %></a>
           <% if (currentUser && currentUser.username === 'dtn'){ %>
-            <a class="gen-button edit-button" href="/years/<%= year._id %>/newsletters/<%= month._id %>/edit">Edit</a>
+            <a class="gen-button edit-button" href="/years/<%= year._id %>/newsletters/<%= month._id %>/">Edit</a>
           <% } %>
         </div>
       <% }); %>

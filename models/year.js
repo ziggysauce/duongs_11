@@ -5,9 +5,11 @@ const yearSchema = new mongoose.Schema({
   image: String,
   submissions: [
     {
-      name: String,
-      image: String,
-      pdf: String,
+      // name: String,
+      // image: String,
+      // pdf: String,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Newsletter"
     }
   ]
 });

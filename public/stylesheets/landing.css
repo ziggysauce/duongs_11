@@ -1,5 +1,6 @@
 body {
   background-color: #000;
+  font-family: 'Montserrat', 'Open Sans', sans-serif;
 }
 
 #landing-header {
@@ -7,7 +8,6 @@ body {
   position: relative;
   text-align: center;
   padding-top: 60vh;
-  font-family: 'Open Sans', sans-serif;
 }
 
 #landing-header h1 {

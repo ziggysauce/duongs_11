@@ -72,6 +72,22 @@ html, body {
       padding: 0 1em 0 0;
       font-size: 2vw; } }
 
+.flash-container {
+  width: 100%;
+  font-size: 2em; }
+
+.alert-danger {
+  color: red;
+  background: #ffbfbf;
+  display: flex;
+  justify-content: center; }
+
+.alert-success {
+  color: green;
+  background: #ddffcc;
+  display: flex;
+  justify-content: center; }
+
 .container {
   box-sizing: border-box;
   display: flex;
