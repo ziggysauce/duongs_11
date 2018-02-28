@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const User = require('../models/user');
+const middleware = require('../middleware')
 
 // Landing Page Root Route
 router.get('/', (req,res) => {

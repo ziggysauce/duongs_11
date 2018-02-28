@@ -28,7 +28,7 @@ router.post('/', middleware.isLoggedIn, (req,res) => {
       console.log(err);
     } else {
       // Redirect to years index
-      console.log('year created: ', createdYear);
+      // console.log('year created: ', createdYear);
       req.flash('success', 'Successfully added a new year');
       res.redirect('/years');
     }
@@ -71,21 +71,8 @@ router.get('/:id', (req,res) => {
 // EDIT - shows page for specific newsletter to edit
 router.get('/:id/edit', middleware.isLoggedIn, (req,res) => {
   Year.findById(req.params.id, (err, foundYear) => {
+    // console.log(foundYear);
     res.render('years/edit', {year: foundYear})
-  });
-});
-
-
-// UPDATE YEAR ROUTE
-router.put('/:id', middleware.isLoggedIn, (req,res) => {
-  // Find and update correct year
-  Year.findByIdAndUpdate(req.params.id, req.body.year, (err, updatedYear) => {
-    if (err) {
-      res.redirect('/years');
-    } else {
-      req.flash('success', 'Successfully updated year');
-      res.redirect('/years');
-    }
   });
 });
 
@@ -104,27 +91,40 @@ router.delete('/:id', middleware.isLoggedIn, (req,res) => {
 
 // UPDATE NEWSLETTER ROUTE
 router.put('/:id', middleware.isLoggedIn, (req,res) => {
-  console.log('this is the params: ', req.params);
-  console.log('this is req.body: ', req.body);
-  Year.findById(req.params.id, (err, year) => {
-    if (err) {
-      console.log('Error: ', err);
-      req.flash('error', 'Could not update newsletter');
-      res.redirect('/years');
-    } else {
-      // Find and update correct newsletter
-      Newsletter.findByIdAndUpdate(req.body.submissions._id, req.body.submissions, (err, updatedNewsletter) => {
-        if (err) {
-          res.redirect('/years/' + req.params.id);
-        } else {
-          // console.log('current year 2: ', year);
-          // console.log('found newsletter to update: ', updatedNewsletter);
-          req.flash('success', 'Successfully updated the newsletter');
-          res.redirect('/years/' + req.params.id + '/newsletters/' + req.body.submissions._id);
-        }
-      });
-    }
-  });
+  // console.log('this is the params: ', req.params);
+  // console.log('this is req.body: ', req.body);
+  if (req.body.submissions) {
+    Year.findById(req.params.id, (err, year) => {
+      if (err) {
+        console.log('Error: ', err);
+        req.flash('error', 'Could not update newsletter');
+        res.redirect('/years');
+      } else {
+        // Find and update correct newsletter
+        Newsletter.findByIdAndUpdate(req.body.submissions._id, req.body.submissions, (err, updatedNewsletter) => {
+          if (err) {
+            res.redirect('/years/' + req.params.id);
+          } else {
+            // console.log('current year 2: ', year);
+            // console.log('found newsletter to update: ', updatedNewsletter);
+            req.flash('success', 'Successfully updated the newsletter');
+            res.redirect('/years/' + req.params.id + '/newsletters/' + req.body.submissions._id);
+          }
+        });
+      }
+    });
+  } else if (req.body.year) {
+    // Find and update correct year
+    Year.findByIdAndUpdate(req.params.id, req.body.year, (err, updatedYear) => {
+      if (err) {
+        res.redirect('/years');
+      } else {
+        // console.log(updatedYear);
+        req.flash('success', 'Successfully updated year');
+        res.redirect('/years');
+      }
+    });
+  }
 });
 
 module.exports = router;
