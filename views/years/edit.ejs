@@ -1,0 +1,14 @@
+<% include ../partials/authheader %>
+
+<div class="container">
+  <h1 style="text-align: center;">Edit <%= year.name %></h1>
+  <div style="width: 50%; margin: 25px auto;">
+    <form action="/years/<%= year._id %>?_method=PUT" method="POST">
+      <input type="text" value="<%= year.name %>" name="year[name]">
+      <input type="text" value="<%= year.image %>" name="year[image]">
+      <button class="gen-button add-new">Submit!</button>
+    </form>
+  </div>
+</div>
+
+<% include ../partials/footer %>

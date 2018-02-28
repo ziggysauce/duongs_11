@@ -15,6 +15,9 @@
       <div class="show-card">
         <img src="<%= year.image %>">
         <a class="link gen-button" href="/years/<%= year._id %>"><%= year.name %></a>
+        <% if (currentUser && currentUser.username === 'dtn'){ %>
+          <a class="gen-button edit-button" href="/years/<%= year._id %>/edit">Edit</a>
+        <% } %>
       </div>
     <% }); %>
   </div>

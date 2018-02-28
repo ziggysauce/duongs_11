@@ -9,6 +9,7 @@
         <form class="delete" action="/years/<%= year._id %>?_method=DELETE" method="POST">
           <button class="gen-button delete-button">Delete this year</button>
         </form>
+        <a class="gen-button edit-button" href="/years/<%= year._id %>/edit">Edit this year</a>
       <% } %>
     </div>
     

@@ -68,6 +68,27 @@ router.get('/:id', (req,res) => {
   });
 });
 
+// EDIT - shows page for specific newsletter to edit
+router.get('/:id/edit', middleware.isLoggedIn, (req,res) => {
+  Year.findById(req.params.id, (err, foundYear) => {
+    res.render('years/edit', {year: foundYear})
+  });
+});
+
+
+// UPDATE YEAR ROUTE
+router.put('/:id', middleware.isLoggedIn, (req,res) => {
+  // Find and update correct year
+  Year.findByIdAndUpdate(req.params.id, req.body.year, (err, updatedYear) => {
+    if (err) {
+      res.redirect('/years');
+    } else {
+      req.flash('success', 'Successfully updated year');
+      res.redirect('/years');
+    }
+  });
+});
+
 // DESTROY YEAR ROUTE
 router.delete('/:id', middleware.isLoggedIn, (req,res) => {
   Year.findByIdAndRemove(req.params.id, (err) => {
@@ -107,6 +128,3 @@ router.put('/:id', middleware.isLoggedIn, (req,res) => {
 });
 
 module.exports = router;
-
-
-// req.body.submission,

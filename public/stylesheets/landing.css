@@ -5,9 +5,15 @@ body {
 
 #landing-header {
   z-index: 1;
+  height: 80vh;
+  /* width: 300px; */
   position: relative;
   text-align: center;
-  padding-top: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 2em;
 }
 
 #landing-header h1 {

@@ -26,7 +26,7 @@ router.post('/register', (req,res) => {
       return res.render('register', {'error': err.message});
     }
     passport.authenticate('local')(req, res, () => {
-      req.flash('success', 'Welcome to Duongs 11' + user.username);
+      req.flash('success', 'Welcome to Duongs 11 ' + user.username);
       res.redirect('/years');
     });
   });
