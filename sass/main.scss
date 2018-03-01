@@ -49,6 +49,12 @@ html, body {
   box-shadow: 0px 3px 5px $shadow;
   position: relative;
 
+  h1 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
   a {
     padding-left: 3em;
     font-size: 2em;
@@ -306,6 +312,7 @@ h2 {
 .card-wrapper {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .year-title {
