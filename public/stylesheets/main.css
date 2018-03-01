@@ -17,6 +17,10 @@ html, body {
   width: 100%;
   box-shadow: 0px 3px 5px #9f9f9f;
   position: relative; }
+  .bar h1 {
+    display: flex;
+    justify-content: center;
+    text-align: center; }
   .bar a {
     padding-left: 3em;
     font-size: 2em;
@@ -54,6 +58,9 @@ html, body {
     max-height: 5em; }
 
 @media screen and (max-width: 725px) {
+  .bar a {
+    padding: 0 0 0 1em;
+    font-size: 1.5em; }
   .fam-icon {
     display: none; }
   .mobile-header {
@@ -67,10 +74,18 @@ html, body {
     .mobile-header ul {
       display: flex;
       list-style-type: none;
-      padding: 0 0 0 1em; }
+      padding: 0 1em; }
     .mobile-header li {
       padding: 0 1em 0 0;
       font-size: 2vw; } }
+
+@media screen and (max-width: 469px) {
+  .bar {
+    text-align: center;
+    justify-content: center; }
+    .bar a {
+      padding: 0;
+      font-size: 1.5em; } }
 
 .flash-container {
   width: 100%;
@@ -161,8 +176,7 @@ html, body {
 
 .link {
   border-bottom: 2px solid #355aa3;
-  background: #5085ed;
-  width: 200px; }
+  background: #5085ed; }
   .link:hover {
     background: #4877d6; }
   .link:active {
@@ -188,9 +202,9 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 300px;
-  width: 25vw;
-  margin: 30px 20px;
+  min-width: 250px;
+  width: 28vw;
+  margin: 30px 10px;
   text-align: center; }
   .show-card img {
     width: 100%;
@@ -199,7 +213,8 @@ h2 {
 
 .card-wrapper {
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  justify-content: space-evenly; }
 
 .year-title {
   font-weight: 400;
@@ -235,6 +250,10 @@ h2 {
   text-decoration: none; }
   .year-link:hover {
     color: #EC494E; }
+
+@media (max-width: 468px) {
+  .dashboard {
+    display: none; } }
 
 .signup {
   padding: 100px; }

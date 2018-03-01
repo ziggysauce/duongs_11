@@ -26,7 +26,6 @@ $bg-blue: #47526B;
 html, body {
   padding: 0;
   margin: 0;
-  overflow-x: hidden;
   font-family: 'Montserrat','Open sans', sans-serif;
 }
 
@@ -112,7 +111,8 @@ html, body {
 
 @media screen and (max-width:725px) {
   .bar a {
-    padding: 0;
+    padding: 0 0 0 1em;
+    font-size: 1.5em;
   }
   .fam-icon {
     display: none;
@@ -129,12 +129,23 @@ html, body {
     ul {
       display: flex;
       list-style-type: none;
-      padding: 0 0 0 1em;
+      padding: 0 1em;
     }
 
     li {
       padding: 0 1em 0 0;
       font-size: 2vw;
+    }
+  }
+}
+
+@media screen and (max-width: 469px) {
+  .bar {
+    text-align: center;
+    justify-content: center;
+    a {
+      padding: 0;
+      font-size: 1.5em;
     }
   }
 }
@@ -260,7 +271,7 @@ html, body {
 .link {
   border-bottom: 2px solid $link-dark;
   background: $link;
-  width: 200px;
+  // width: 200px;
   &:hover {
     background: $link-medium;
   }
@@ -297,9 +308,9 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 300px;
-  width: 25vw;
-  margin: 30px 20px;
+  min-width: 250px;
+  width: 28vw;
+  margin: 30px 10px;
   text-align: center;
 
   img {
@@ -316,7 +327,7 @@ h2 {
 .card-wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .year-title {
@@ -365,6 +376,12 @@ h2 {
 
   &:hover {
     color: $delete;
+  }
+}
+
+@media (max-width: 468px) {
+  .dashboard {
+    display: none;
   }
 }
 
