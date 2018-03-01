@@ -26,6 +26,7 @@ $bg-blue: #47526B;
 html, body {
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
   font-family: 'Montserrat','Open sans', sans-serif;
 }
 
@@ -110,6 +111,9 @@ html, body {
 }
 
 @media screen and (max-width:725px) {
+  .bar a {
+    padding: 0;
+  }
   .fam-icon {
     display: none;
   }
