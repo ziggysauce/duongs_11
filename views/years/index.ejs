@@ -2,23 +2,28 @@
 
 <div class="container">
 
-  <div class="user-action">
-    <% if (currentUser && currentUser.username === 'dtn'){ %>
-      <a class="add-new gen-button" href="/years/new">Add new year</a>
-    <% } %>
+  <% if (currentUser){ %>
+
+    <div class="user-action">
+      <% if (currentUser && currentUser.username === 'dtn'){ %>
+        <a class="add-new gen-button" href="/years/new">Add new year</a>
+      <% } %>
+    </div>
+
+
+    <h2>Find Newsletter by Year</h2>
+    <div class="years-container">
+      <% years.forEach((year) => { %>
+        <div class="show-card">
+          <img src="<%= year.image %>">
+          <a class="link gen-button" href="/years/<%= year._id %>"><%= year.name %></a>
+
+        </div>
+      <% }); %>
+    </div>
   </div>
 
+<% } %>
 
-  <h2>Find Newsletter by Year</h2>
-  <div class="years-container">
-    <% years.forEach((year) => { %>
-      <div class="show-card">
-        <img src="<%= year.image %>">
-        <a class="link gen-button" href="/years/<%= year._id %>"><%= year.name %></a>
-
-      </div>
-    <% }); %>
-  </div>
-</div>
 
 <% include ../partials/footer %>

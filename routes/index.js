@@ -14,24 +14,24 @@ router.get('/', (req,res) => {
 // ==========================
 
 // Show register forms
-// router.get('/register', (req,res) => {
-//   res.render('register');
-// });
+router.get('/register', (req,res) => {
+  res.render('register');
+});
 
-// // Handle sign up logic
-// router.post('/register', (req,res) => {
-//   const newUser = new User({username: req.body.username});
-//   User.register(newUser, req.body.password, (err, user) => {
-//     if (err) {
-//       req.flash('error', err.message);
-//       return res.render('register', {'error': err.message});
-//     }
-//     passport.authenticate('local')(req, res, () => {
-//       req.flash('success', 'Welcome to Duongs 11 ' + user.username);
-//       res.redirect('/years');
-//     });
-//   });
-// });
+// Handle sign up logic
+router.post('/register', (req,res) => {
+  const newUser = new User({username: req.body.username});
+  User.register(newUser, req.body.password, (err, user) => {
+    if (err) {
+      req.flash('error', err.message);
+      return res.render('register', {'error': err.message});
+    }
+    passport.authenticate('local')(req, res, () => {
+      req.flash('success', 'Welcome to Duongs 11 ' + user.username);
+      res.redirect('/years');
+    });
+  });
+});
 
 // Show login form
 router.get('/login', (req,res) => {
@@ -49,7 +49,7 @@ router.post('/login', passport.authenticate('local', {
 router.get('/logout', (req,res) => {
   req.logout();
   req.flash('success', 'Logged you out!');
-  res.redirect('/years');
+  res.redirect('/login');
 });
 
 module.exports = router;
