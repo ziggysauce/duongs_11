@@ -33,4 +33,10 @@
   
 <% } %>
 
+<% if (!currentUser){ %>
+  <div class="not-logged-in">
+    <a href="/login" class="button">Login</a>
+  </div>
+<% } %>
+
 <% include ../partials/footer %>

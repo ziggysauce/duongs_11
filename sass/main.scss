@@ -154,6 +154,12 @@ html, body {
 // GENERAL ============================
 // ====================================
 
+.not-logged-in {
+  height: 65vh;
+  display: flex;
+  align-items: center;
+}
+
 .flash-container {
   width: 100%;
   font-size: 2em;

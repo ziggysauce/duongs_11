@@ -87,6 +87,11 @@ html, body {
       padding: 0;
       font-size: 1.5em; } }
 
+.not-logged-in {
+  height: 65vh;
+  display: flex;
+  align-items: center; }
+
 .flash-container {
   width: 100%;
   font-size: 2em; }
