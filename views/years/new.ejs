@@ -1,5 +1,7 @@
 <% include ../partials/authheader %>
 
+<% if (currentUser && currentUser.username === 'dtn'){ %>
+
 <div class="container">
   <h1 style="text-align: center;">Create a new year</h1>
   <div style="width: 50%; margin: 25px auto;">
@@ -11,5 +13,11 @@
     <a class="gen-button back-button" href="/years">Go Back</a>
   </div>
 </div>
+
+<% } else { %>
+  <div class="not-logged-in">
+    <a href="/login" class="button">Login</a>
+  </div>  
+<% } %>
 
 <% include ../partials/footer %>

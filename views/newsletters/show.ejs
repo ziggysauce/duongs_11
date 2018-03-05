@@ -1,5 +1,6 @@
 <% include ../partials/authheader %>
 
+<% if (currentUser && currentUser.username === 'dtn'){ %>
 
   <div class="user-action">
     <% if (currentUser && currentUser.username === 'dtn'){ %>
@@ -17,5 +18,11 @@
       <a class="gen-button link" href="<%= newsletter.pdf %>"><%= newsletter.name %></a>
     </div>
   </div>
+
+  <% } else { %>
+    <div class="not-logged-in">
+      <a href="/login" class="button">Login</a>
+    </div>  
+  <% } %>
 
 <% include ../partials/footer %>
